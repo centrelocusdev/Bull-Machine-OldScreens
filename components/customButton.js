@@ -1,9 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const CustomButton = ({ onPress, title, buttonColor, textColor, paddingVertical, paddingHorizontal, borderRadius,borderColor, borderWidth , marginBottom }) => {
+const CustomButton = ({navigation, navi,  title, buttonColor, textColor, paddingVertical, paddingHorizontal, borderRadius,borderColor, borderWidth , marginBottom }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: buttonColor, paddingVertical, paddingHorizontal, borderRadius, borderWidth, borderColor, marginBottom }]}>
+    <TouchableOpacity onPress={() => {navigation.navigate(navi)}} style={[styles.button, { backgroundColor: buttonColor, paddingVertical, paddingHorizontal, borderRadius, borderWidth, borderColor, marginBottom }]}>
       <Text style={[styles.buttonText, { color: textColor }]}>{title}</Text>
     </TouchableOpacity>
   );
